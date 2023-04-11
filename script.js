@@ -19,7 +19,7 @@ function showdown(playerSelection, computerSelection) {
         
 
         }
-        if (playerSelection.toLowerCase() === "paper") {
+        else if (playerSelection.toLowerCase() === "paper") {
             if (computerSelection === "scissors") {
                 console.log("Computer wins!");
             }
@@ -27,7 +27,7 @@ function showdown(playerSelection, computerSelection) {
                 console.log("Player wins!");
             }
         }
-        if (playerSelection.toLowerCase() === "scissors") {
+        else if (playerSelection.toLowerCase() === "scissors") {
             if (computerSelection === "rock") {
                 console.log("Computer wins!");
             }
