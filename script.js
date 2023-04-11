@@ -11,28 +11,28 @@ function showdown(playerSelection, computerSelection) {
     else {
         if (playerSelection.toLowerCase() === "rock") {
             if (computerSelection === "paper") {
-                console.log("Computer wins!");
+                console.log(`You Lose! ${computerSelection} beats ${playerSelection}.`);
             }
             else {
-                console.log("Player wins!");
+                console.log(`You win! ${playerSelection} beats ${computerSelection}.`);;
             }
         
 
         }
         else if (playerSelection.toLowerCase() === "paper") {
             if (computerSelection === "scissors") {
-                console.log("Computer wins!");
+                console.log(`You Lose! ${computerSelection} beats ${playerSelection}.`);
             }
             else {
-                console.log("Player wins!");
+                console.log(`You win! ${playerSelection} beats ${computerSelection}.`);;
             }
         }
         else if (playerSelection.toLowerCase() === "scissors") {
             if (computerSelection === "rock") {
-                console.log("Computer wins!");
+                console.log(`You Lose! ${computerSelection} beats ${playerSelection}.`);
             }
             else {
-                console.log("Player wins!");
+                console.log(`You win! ${playerSelection} beats ${computerSelection}.`);;
             }
         }
     }
