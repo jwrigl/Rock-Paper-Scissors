@@ -1,15 +1,15 @@
 function getComputerChoice(){
-    const choices=["Rock","Paper","Scissors"]
+    const choices=["rock","paper","scissors"]
     computerChoice = choices[Math.floor(Math.random()*3)]
     return computerChoice;
 }
 
 function showdown(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
+    if (playerSelection.toLowerCase === computerSelection) {
         console.log("It's a draw!")
     }
     else {
-        if (playerSelection === "Rock") {
+        if (playerSelection.toLowerCase === "rock") {
             if (computerSelection === "Paper") {
                 console.log("Computer wins!")
             }
@@ -19,7 +19,7 @@ function showdown(playerSelection, computerSelection) {
         
 
         }
-        if (playerSelection === "Paper") {
+        if (playerSelection.toLowerCase === "paper") {
             if (computerSelection === "Scissors") {
                 console.log("Computer wins!")
             }
@@ -27,7 +27,7 @@ function showdown(playerSelection, computerSelection) {
                 console.log("Player wins!")
             }
         }
-        if (playerSelection === "Scissors") {
+        if (playerSelection.toLowerCase === "scissors") {
             if (computerSelection === "Rock") {
                 console.log("Computer wins!")
             }
@@ -37,3 +37,6 @@ function showdown(playerSelection, computerSelection) {
         }
     }
 }
+
+const computerSelection = getComputerChoice()
+const playerSelection = prompt("Rock, paper, or scissors?")
