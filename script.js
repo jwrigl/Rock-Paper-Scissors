@@ -5,34 +5,34 @@ function getComputerChoice(){
 }
 
 function showdown(playerSelection, computerSelection) {
-    if (playerSelection.toLowerCase === computerSelection) {
-        console.log("It's a draw!")
+    if (playerSelection.toLowerCase() === computerSelection) {
+        console.log("It's a draw!");
     }
     else {
-        if (playerSelection.toLowerCase === "rock") {
-            if (computerSelection === "Paper") {
-                console.log("Computer wins!")
+        if (playerSelection.toLowerCase() === "rock") {
+            if (computerSelection === "paper") {
+                console.log("Computer wins!");
             }
             else {
-                console.log("Player wins!")
+                console.log("Player wins!");
             }
         
 
         }
-        if (playerSelection.toLowerCase === "paper") {
-            if (computerSelection === "Scissors") {
-                console.log("Computer wins!")
+        if (playerSelection.toLowerCase() === "paper") {
+            if (computerSelection === "scissors") {
+                console.log("Computer wins!");
             }
             else {
-                console.log("Player wins!")
+                console.log("Player wins!");
             }
         }
-        if (playerSelection.toLowerCase === "scissors") {
-            if (computerSelection === "Rock") {
-                console.log("Computer wins!")
+        if (playerSelection.toLowerCase() === "scissors") {
+            if (computerSelection === "rock") {
+                console.log("Computer wins!");
             }
             else {
-                console.log("Player wins!")
+                console.log("Player wins!");
             }
         }
     }
@@ -40,3 +40,4 @@ function showdown(playerSelection, computerSelection) {
 
 const computerSelection = getComputerChoice()
 const playerSelection = prompt("Rock, paper, or scissors?")
+showdown(playerSelection, computerSelection)
