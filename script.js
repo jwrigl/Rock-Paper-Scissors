@@ -7,14 +7,17 @@ function getComputerChoice(){
 function showdown(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() === computerSelection) {
         console.log("It's a draw!");
+        let winner = "none"
     }
     else {
         if (playerSelection.toLowerCase() === "rock") {
             if (computerSelection === "paper") {
                 console.log(`You Lose! ${computerSelection} beats ${playerSelection}.`);
+                let winner = "computer"
             }
             else {
-                console.log(`You win! ${playerSelection} beats ${computerSelection}.`);;
+                console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
+                let winner = "human"
             }
         
 
@@ -22,17 +25,21 @@ function showdown(playerSelection, computerSelection) {
         else if (playerSelection.toLowerCase() === "paper") {
             if (computerSelection === "scissors") {
                 console.log(`You Lose! ${computerSelection} beats ${playerSelection}.`);
+                let winner = "computer"
             }
             else {
-                console.log(`You win! ${playerSelection} beats ${computerSelection}.`);;
+                console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
+                let winner = "human"
             }
         }
         else if (playerSelection.toLowerCase() === "scissors") {
             if (computerSelection === "rock") {
                 console.log(`You Lose! ${computerSelection} beats ${playerSelection}.`);
+                winner = "computer"
             }
             else {
-                console.log(`You win! ${playerSelection} beats ${computerSelection}.`);;
+                console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
+                let winner = "human"
             }
         }
     }
