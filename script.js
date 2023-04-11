@@ -67,7 +67,6 @@ function game(){
         console.log(`You are the champion! The score was ${computerWins} to ${humanWins}. The future looks bleak for humanity.`)
     }
     else {
-        let champion = "No one";
         console.log(`No one was the champion! The score was 0 to 0. The future is undecided.`)
 
 }
