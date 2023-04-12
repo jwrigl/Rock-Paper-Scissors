@@ -8,16 +8,19 @@ function showdown(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() === computerSelection) {
         console.log("It's a draw!");
         let winner = "none";
+        return winner;
     }
     else {
         if (playerSelection.toLowerCase() === "rock") {
             if (computerSelection === "paper") {
                 console.log(`You Lose! ${computerSelection} beats ${playerSelection}.`);
                 let winner = "computer";
+                return winner;
             }
             else {
                 console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
                 let winner = "human";
+                return winner;
             }
         
 
@@ -26,24 +29,27 @@ function showdown(playerSelection, computerSelection) {
             if (computerSelection === "scissors") {
                 console.log(`You Lose! ${computerSelection} beats ${playerSelection}.`);
                 let winner = "computer";
+                return winner;
             }
             else {
                 console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
                 let winner = "human";
+                return winner;
             }
         }
         else if (playerSelection.toLowerCase() === "scissors") {
             if (computerSelection === "rock") {
                 console.log(`You Lose! ${computerSelection} beats ${playerSelection}.`);
-                winner = "computer";
+                let winner = "computer";
+                return winner;
             }
             else {
                 console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
                 let winner = "human";
+                return winner;
             }
         }
     }
-    return winner
 }
 
 function game(){
@@ -52,11 +58,11 @@ function game(){
     for (let i = 1; i <= 5; i++) {
         let computerSelection = getComputerChoice();
         let playerSelection = prompt("Rock, paper, or scissors?");
-        winner = showdown(playerSelection, computerSelection)
-        if (winner === "human") {
+        let lastWinner = showdown(playerSelection, computerSelection)
+        if (lastWinner === "human") {
             humanWins++;
         }
-        else if (winner === "computer") {
+        else if (lastWinner === "computer") {
             computerWins++;
         }
 
