@@ -44,19 +44,20 @@ function showdown(playerSelection, computerSelection) {
         }
     }
     return winner
+}
 
 function game(){
     let humanWins = 0;
     let computerWins = 0;
-    for (let i = 1; i <= ; i++) {
+    for (let i = 1; i <= 5; i++) {
         let computerSelection = getComputerChoice();
         let playerSelection = prompt("Rock, paper, or scissors?");
         winner = showdown(playerSelection, computerSelection)
         if (winner === "human") {
-            humanWins++1;
+            humanWins++;
         }
         else {
-            computerWins++1;
+            computerWins++;
         }
 
     }
