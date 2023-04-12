@@ -70,13 +70,13 @@ function game(){
 
     }
     if (humanWins > computerWins) {
-        console.log(`You are the champion! The score was ${humanWins} to ${computerWins}. Not so clever now, are they?`)
+        return `You are the champion! The score was ${humanWins} to ${computerWins}. Not so clever now, are they?`
     }
     else if (computerWins > humanWins) {
-        console.log(`The computer is the champion! The score was ${computerWins} to ${humanWins}. The future looks bleak for humanity.`)
+        return `The computer is the champion! The score was ${computerWins} to ${humanWins}. The future looks bleak for humanity.`
     }
     else {
-        console.log(`No one was the champion! The score was 0 to 0. The future is undecided.`)
+        return `No one was the champion! The score was 0 to 0. The future is undecided.`
 
 }
 
@@ -84,3 +84,4 @@ function game(){
 
 
 }
+
