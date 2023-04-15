@@ -14,3 +14,7 @@ body {
     flex-direction: column;
 }
 
+
+.battleButtons {
+    width: 50px;
+}

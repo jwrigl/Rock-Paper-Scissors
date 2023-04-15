@@ -6,10 +6,33 @@ function deleteLanding() {
 
 }
 
+function addBattleButtons() {
+    let container = document.getElementById("mainContainer");
+
+    let rock = document.createElement("button");
+    rock.setAttribute("class", "battleButton")
+    rock.setAttribute("id", "rockButton")
+    container.appendChild(rock);
+
+    let paper = document.createElement("button");
+    rock.setAttribute("class", "battleButton")
+    rock.setAttribute("id", "paperButton")
+    container.appendChild(paper);
+
+    let scissors = document.createElement("button");
+    rock.setAttribute("class", "battleButton")
+    rock.setAttribute("id", "scissorsButton")
+    container.appendChild(scissors);
 
 
+}
 
 
+function startButton() {
+    deleteLanding()
+    addBattleButtons()
+
+}
 
 
 
