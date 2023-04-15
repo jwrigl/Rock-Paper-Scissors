@@ -18,3 +18,7 @@ body {
 .battleButtons {
     width: 50px;
 }
+
+.battleButtonsContainer {
+    display: flex;
+}

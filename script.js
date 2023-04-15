@@ -7,7 +7,7 @@ function deleteLanding() {
 }
 
 function addBattleButtons() {
-    let container = document.getElementById("mainContainer");
+    let container = document.getElementById("battleButtonsContainer");
 
     let rock = document.createElement("button");
     rock.setAttribute("class", "battleButton")
@@ -31,6 +31,9 @@ function addBattleButtons() {
 function startButton() {
     deleteLanding()
     addBattleButtons()
+    let btn = document.getElementById("readyButton")
+    btn.disabled = true;
+    
 
 }
 
