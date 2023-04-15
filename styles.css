@@ -16,9 +16,11 @@ body {
 
 
 .battleButtons {
-    width: 50px;
+    width: 5vw;
+    height: 5vh;
 }
 
 .battleButtonsContainer {
     display: flex;
+    justify-content: space-between;
 }

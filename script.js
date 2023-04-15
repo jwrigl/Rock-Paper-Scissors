@@ -13,18 +13,18 @@ function addBattleButtons() {
     let container = document.getElementById("battleButtonsContainer");
 
     let rock = document.createElement("button");
-    rock.setAttribute("class", "battleButton")
+    rock.setAttribute("class", "battleButtons")
     rock.setAttribute("id", "rockButton")
     container.appendChild(rock);
 
     let paper = document.createElement("button");
-    rock.setAttribute("class", "battleButton")
-    rock.setAttribute("id", "paperButton")
+    paper.setAttribute("class", "battleButtons")
+    paper.setAttribute("id", "paperButton")
     container.appendChild(paper);
 
     let scissors = document.createElement("button");
-    rock.setAttribute("class", "battleButton")
-    rock.setAttribute("id", "scissorsButton")
+    scissors.setAttribute("class", "battleButtons")
+    scissors.setAttribute("id", "scissorsButton")
     container.appendChild(scissors);
 
 
