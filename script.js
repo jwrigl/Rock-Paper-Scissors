@@ -16,20 +16,20 @@ function addBattleButtons() {
     rock.innerText="Rock"
     rock.setAttribute("class", "battleButtons")
     rock.setAttribute("id", "rockButton")
-    rock.setAttribute("onclick","battleButtonPress(\"rock\")")
+    rock.setAttribute("onclick","battleButtonPress(\"rock\",event)")
     container.appendChild(rock);
 
     let paper = document.createElement("button");
     paper.setAttribute("class", "battleButtons")
     paper.setAttribute("id", "paperButton")
-    paper.setAttribute("onclick","battleButtonPress(\"paper\")")
+    paper.setAttribute("onclick","battleButtonPress(\"paper\",event)")
     paper.innerText="Paper"
     container.appendChild(paper);
 
     let scissors = document.createElement("button");
     scissors.setAttribute("class", "battleButtons")
     scissors.setAttribute("id", "scissorsButton")
-    scissors.setAttribute("onclick","battleButtonPress(\"scissors\")")
+    scissors.setAttribute("onclick","battleButtonPress(\"scissors\",event)")
     scissors.innerText="Scissors"
     container.appendChild(scissors);
 
@@ -47,15 +47,33 @@ function startButton() {
 
 
 function battleButtonPress(playerChoice) {
+    console.log(event)
     computerChoice = getComputerChoice();
     winner = showdown(playerChoice,computerChoice);
+    deleteBattleButtons();
+    resultsScreen(winner);
 
 
 }
 
 
+function deleteBattleButtons() {
+    buttons = document.getElementsByClassName("battleButtons")
+    let buttonArray = Array.from(buttons);
+    buttonArray.forEach(button => { button.remove()});
+
+  
+}
+
+function resultsScreen(winner) {
+    let resultsMessage = document.createElement("div");
+    resultsMessage.innerHTML="The "+winner+" is the winner!"
+    let container = document.getElementById("mainContainer");
+    container.appendChild(resultsMessage);
 
 
+
+}
 
 
 
