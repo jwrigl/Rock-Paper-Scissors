@@ -1,3 +1,37 @@
+//website changes
+
+function deleteLanding() {
+    let p = document.getElementById("flavourText")
+    p.innerText="";
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//RPS logic
 function getComputerChoice(){
     const choices=["rock","paper","scissors"]
     computerChoice = choices[Math.floor(Math.random()*3)]
