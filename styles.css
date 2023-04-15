@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.headerContainer, .mainContainer {
+    display: flex;
+    padding: 2rem 20vw;
+
+}
+
+.mainContainer {
+    flex-direction: column;
+}
+
