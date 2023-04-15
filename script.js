@@ -13,18 +13,24 @@ function addBattleButtons() {
     let container = document.getElementById("battleButtonsContainer");
 
     let rock = document.createElement("button");
+    rock.innerText="Rock"
     rock.setAttribute("class", "battleButtons")
     rock.setAttribute("id", "rockButton")
+    rock.setAttribute("onclick","battleButtonPress(\"rock\")")
     container.appendChild(rock);
 
     let paper = document.createElement("button");
     paper.setAttribute("class", "battleButtons")
     paper.setAttribute("id", "paperButton")
+    paper.setAttribute("onclick","battleButtonPress(\"paper\")")
+    paper.innerText="Paper"
     container.appendChild(paper);
 
     let scissors = document.createElement("button");
     scissors.setAttribute("class", "battleButtons")
     scissors.setAttribute("id", "scissorsButton")
+    scissors.setAttribute("onclick","battleButtonPress(\"scissors\")")
+    scissors.innerText="Scissors"
     container.appendChild(scissors);
 
 
@@ -40,7 +46,12 @@ function startButton() {
 }
 
 
+function battleButtonPress(playerChoice) {
+    computerChoice = getComputerChoice();
+    winner = showdown(playerChoice,computerChoice);
 
+
+}
 
 
 
