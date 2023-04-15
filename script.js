@@ -1,8 +1,11 @@
 //website changes
 
 function deleteLanding() {
+    parentElement = document.getElementById("mainContainer");
     let p = document.getElementById("flavourText")
-    p.innerText="";
+    let btn = document.getElementById("readyButton")
+    parentElement.removeChild(p)
+    parentElement.removeChild(btn)
 
 }
 
@@ -29,11 +32,10 @@ function addBattleButtons() {
 
 
 function startButton() {
-    deleteLanding()
-    addBattleButtons()
     let btn = document.getElementById("readyButton")
     btn.disabled = true;
-    
+    deleteLanding()
+    addBattleButtons()
 
 }
 
