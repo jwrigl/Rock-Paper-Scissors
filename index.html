@@ -7,19 +7,21 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="headerContainer">
-    <img>
-    <div class="title">Rock Paper Scissors</div>
-    <img>
-  </div>
-  <div class="mainContainer" id="mainContainer">
-    <div class="battleButtonsContainer" id="battleButtonsContainer">
-      
+  <div id="pageContainer">
+    <div class="headerContainer">
+      <img>
+      <div class="title">Rock Paper Scissors</div>
+      <img>
+    </div>
+    <div class="mainContainer" id="mainContainer">
+      <p id="flavourText">fluff text</p>  
+      <button class="readyButton" id="readyButton" onclick="startButton()">READY</button>
+      <div class="battleButtonsContainer" id="battleButtonsContainer"></div>
 
     </div>
-    <p id="flavourText">fluff text</p>  
-    <button class="readyButton" id="readyButton" onclick="startButton()">READY</button>
+    <div class="footer">
+      <a href="https://github.com/jwrigl/Rock-Paper-Scissors">Github</a>
+    </div>
   </div>
-
 </body>
 </html>
