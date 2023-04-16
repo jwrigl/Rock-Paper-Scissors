@@ -15,6 +15,7 @@ body {
 
 .mainContainer {
     flex-direction: column;
+    height: 80vh;
 }
 
 
@@ -36,4 +37,9 @@ body {
 #scoreMessage {
     font-size: 20rem;
     font-weight: bold;
+}
+
+#nextButton {
+    width: 10vw;
+    height: 2.5vh;
 }

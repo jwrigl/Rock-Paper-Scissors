@@ -50,6 +50,10 @@ function startButton() {
 
 
 function battleButtonPress(playerChoice) {
+    buttons = document.getElementsByClassName("battleButtons")
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = true;
+    }
     console.log(event)
     computerChoice = getComputerChoice();
     winner = showdown(playerChoice,computerChoice);
@@ -73,23 +77,35 @@ function resultsScreen(winner) {
     let resultsMessage = document.createElement("div");
     if (winner === 'none' ? resultsMessage.innerText="It's a draw!" : resultsMessage.innerText="The "+winner+" is the winner!")
     resultsMessage.setAttribute("id","resultsMessage")
+    resultsMessage.setAttribute("class","resultsScreen")
+
 
     let scoreMessage = document.createElement("div");
     scoreMessage.innerText=`${humanScore}:${computerScore}`
     scoreMessage.setAttribute("id","scoreMessage")
+    scoreMessage.setAttribute("class","resultsScreen")
 
+    let nextButton = document.createElement("button");
+    nextButton.innerText="Next Round!";
+    nextButton.setAttribute("id","nextButton")
+    nextButton.setAttribute("class","resultsScreen")
+    nextButton.setAttribute("onclick","deleteResultsScreen()")
 
     let container = document.getElementById("mainContainer");
     container.appendChild(resultsMessage);
     container.appendChild(scoreMessage);
-
-
-
+    container.appendChild(nextButton);
 
 }
 
+function deleteResultsScreen() {
+    results = document.getElementsByClassName("resultsScreen")
+    let resultsArray = Array.from(results);
+    resultsArray.forEach(resultElement => { resultElement.remove()});
 
-function winLossScreen(winner); {
+}
+
+function winLossScreen(winner) {
     if (winner === "computer") {
         console.log("cpu")
 
@@ -135,7 +151,7 @@ function showdown(playerSelection, computerSelection) {
             else {
                 console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
                 let winner = "human";
-                huumanScore += 1
+                humanScore += 1
                 return winner;
             }
         
@@ -151,7 +167,7 @@ function showdown(playerSelection, computerSelection) {
             else {
                 console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
                 let winner = "human";
-                huumanScore += 1
+                humanScore += 1
                 return winner;
             }
         }
@@ -165,7 +181,7 @@ function showdown(playerSelection, computerSelection) {
             else {
                 console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
                 let winner = "human";
-                huumanScore += 1
+                humanScore += 1
                 return winner;
             }
         }
