@@ -1,5 +1,8 @@
 //website changes
 
+var computerScore = 0;
+var humanScore = 0; 
+
 function deleteLanding() {
     parentElement = document.getElementById("mainContainer");
     let p = document.getElementById("flavourText")
@@ -62,21 +65,41 @@ function deleteBattleButtons() {
     let buttonArray = Array.from(buttons);
     buttonArray.forEach(button => { button.remove()});
 
+
   
 }
 
 function resultsScreen(winner) {
     let resultsMessage = document.createElement("div");
-    resultsMessage.innerHTML="The "+winner+" is the winner!"
+    if (winner === 'none' ? resultsMessage.innerText="It's a draw!" : resultsMessage.innerText="The "+winner+" is the winner!")
+    resultsMessage.setAttribute("id","resultsMessage")
+
+    let scoreMessage = document.createElement("div");
+    scoreMessage.innerText=`${humanScore}:${computerScore}`
+    scoreMessage.setAttribute("id","scoreMessage")
+
+
     let container = document.getElementById("mainContainer");
     container.appendChild(resultsMessage);
+    container.appendChild(scoreMessage);
+
 
 
 
 }
 
 
+function winLossScreen(winner); {
+    if (winner === "computer") {
+        console.log("cpu")
 
+    }
+
+    if (winner ==="human") {
+        console.log("humans")
+
+    }
+};
 
 
 
@@ -106,11 +129,13 @@ function showdown(playerSelection, computerSelection) {
             if (computerSelection === "paper") {
                 console.log(`You Lose! ${computerSelection} beats ${playerSelection}.`);
                 let winner = "computer";
+                computerScore += 1
                 return winner;
             }
             else {
                 console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
                 let winner = "human";
+                huumanScore += 1
                 return winner;
             }
         
@@ -120,11 +145,13 @@ function showdown(playerSelection, computerSelection) {
             if (computerSelection === "scissors") {
                 console.log(`You Lose! ${computerSelection} beats ${playerSelection}.`);
                 let winner = "computer";
+                computerScore += 1
                 return winner;
             }
             else {
                 console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
                 let winner = "human";
+                huumanScore += 1
                 return winner;
             }
         }
@@ -132,11 +159,13 @@ function showdown(playerSelection, computerSelection) {
             if (computerSelection === "rock") {
                 console.log(`You Lose! ${computerSelection} beats ${playerSelection}.`);
                 let winner = "computer";
+                computerScore += 1
                 return winner;
             }
             else {
                 console.log(`You win! ${playerSelection} beats ${computerSelection}.`);
                 let winner = "human";
+                huumanScore += 1
                 return winner;
             }
         }

@@ -7,6 +7,9 @@ body {
 .headerContainer, .mainContainer {
     display: flex;
     padding: 2rem 20vw;
+    background-color: #1F2937;
+    color: white;
+    align-items: center;
 
 }
 
@@ -23,4 +26,14 @@ body {
 .battleButtonsContainer {
     display: flex;
     justify-content: space-between;
+}
+
+#resultsMessage {
+    font-size: 5rem;
+
+}
+
+#scoreMessage {
+    font-size: 20rem;
+    font-weight: bold;
 }
