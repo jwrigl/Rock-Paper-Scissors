@@ -16,23 +16,23 @@ function addBattleButtons() {
     let container = document.getElementById("battleButtonsContainer");
 
     let rock = document.createElement("button");
-    rock.innerText="Rock"
-    rock.setAttribute("class", "battleButtons")
-    rock.setAttribute("id", "rockButton")
-    rock.setAttribute("onclick","battleButtonPress(\"rock\",event)")
+    rock.innerText="Rock";
+    rock.setAttribute("class", "battleButtons");
+    rock.setAttribute("id", "rockButton");
+    rock.setAttribute("onclick","battleButtonPress(\"rock\",event)");
     container.appendChild(rock);
 
     let paper = document.createElement("button");
-    paper.setAttribute("class", "battleButtons")
-    paper.setAttribute("id", "paperButton")
-    paper.setAttribute("onclick","battleButtonPress(\"paper\",event)")
+    paper.setAttribute("class", "battleButtons");
+    paper.setAttribute("id", "paperButton");
+    paper.setAttribute("onclick","battleButtonPress(\"paper\",event)");
     paper.innerText="Paper"
     container.appendChild(paper);
 
     let scissors = document.createElement("button");
-    scissors.setAttribute("class", "battleButtons")
-    scissors.setAttribute("id", "scissorsButton")
-    scissors.setAttribute("onclick","battleButtonPress(\"scissors\",event)")
+    scissors.setAttribute("class", "battleButtons");
+    scissors.setAttribute("id", "scissorsButton");
+    scissors.setAttribute("onclick","battleButtonPress(\"scissors\",event)");
     scissors.innerText="Scissors"
     container.appendChild(scissors);
 
@@ -74,22 +74,34 @@ function deleteBattleButtons() {
 }
 
 function resultsScreen(winner) {
+    //evaluate if there is a winner 
+
+    if (computerScore === 5) {
+        winLossScreen("computer")
+        return;
+    }
+    else if (humanScore === 5) {
+        winLossScreen("human")
+        return;
+    }
+
+
     let resultsMessage = document.createElement("div");
     if (winner === 'none' ? resultsMessage.innerText="It's a draw!" : resultsMessage.innerText="The "+winner+" is the winner!")
-    resultsMessage.setAttribute("id","resultsMessage")
-    resultsMessage.setAttribute("class","resultsScreen")
+    resultsMessage.setAttribute("id","resultsMessage");
+    resultsMessage.setAttribute("class","resultsScreen");
 
 
     let scoreMessage = document.createElement("div");
     scoreMessage.innerText=`${humanScore}:${computerScore}`
-    scoreMessage.setAttribute("id","scoreMessage")
-    scoreMessage.setAttribute("class","resultsScreen")
+    scoreMessage.setAttribute("id","scoreMessage");
+    scoreMessage.setAttribute("class","resultsScreen");
 
     let nextButton = document.createElement("button");
     nextButton.innerText="Next Round!";
-    nextButton.setAttribute("id","nextButton")
-    nextButton.setAttribute("class","resultsScreen")
-    nextButton.setAttribute("onclick","deleteResultsScreen()")
+    nextButton.setAttribute("id","nextButton");
+    nextButton.setAttribute("class","resultsScreen");
+    nextButton.setAttribute("onclick","deleteResultsScreen(\"resultsScreen\")");
 
     let container = document.getElementById("mainContainer");
     container.appendChild(resultsMessage);
@@ -98,14 +110,19 @@ function resultsScreen(winner) {
 
 }
 
-function deleteResultsScreen() {
+function deleteResultsScreen(calledfrom) {
     results = document.getElementsByClassName("resultsScreen")
     let resultsArray = Array.from(results);
     resultsArray.forEach(resultElement => { resultElement.remove()});
+    if (calledfrom === "resultsScreen") {
+        addBattleButtons()
+
+    }
 
 }
 
 function winLossScreen(winner) {
+    deleteResultsScreen("winLossScreen")
     if (winner === "computer") {
         console.log("cpu")
 
