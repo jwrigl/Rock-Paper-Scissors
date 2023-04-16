@@ -86,6 +86,7 @@ function resultsScreen(winner) {
     }
 
 
+
     let resultsMessage = document.createElement("div");
     if (winner === 'none' ? resultsMessage.innerText="It's a draw!" : resultsMessage.innerText="The "+winner+" is the winner!")
     resultsMessage.setAttribute("id","resultsMessage");
@@ -123,15 +124,34 @@ function deleteResultsScreen(calledfrom) {
 
 function winLossScreen(winner) {
     deleteResultsScreen("winLossScreen")
+    let container = document.getElementById("mainContainer")
     if (winner === "computer") {
+        let winMsg = document.createElement("div");
+        let winDesc = document.createElement("div");
+        winMsg.setAttribute("id","winMsg");
+        winMsg.innerText="YOU HAVE LOST.";
+        winDesc.setAttribute("id","winDesc");
+        winDesc.innerText="The future looks bleak for humanity.";
+        container.appendChild(winMsg);
+        container.appendChild(winDesc);
         console.log("cpu")
 
     }
 
     if (winner ==="human") {
+        let winMsg = document.createElement("div");
+        let winDesc = document.createElement("div");
+        winMsg.setAttribute("id","winMsg")
+        winMsg.innerText="YOU HAVE WON."
+        winDesc.setAttribute("id","winDesc")
+        winDesc.innerText="Humanity lives to fight another day."
+        container.appendChild(winMsg);
+        container.appendChild(winDesc);
         console.log("humans")
 
     }
+
+ 
 };
 
 

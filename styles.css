@@ -83,3 +83,14 @@ body {
     border: 1px solid #3882f6; 
     font-size: 2rem;
 }
+
+#winDesc {
+    font-size: 1.5rem;
+    color: white;
+}
+
+#winMsg {
+    font-size: 5rem;
+    color: white;
+    font-weight: bold;
+}
